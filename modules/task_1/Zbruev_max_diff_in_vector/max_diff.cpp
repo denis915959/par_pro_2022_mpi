@@ -6,7 +6,6 @@
 #include <vector>
 #include <random>
 #include <exception>
-#include <stdlib.h>
 #include "../../../modules/task_1/Zbruev_max_diff_in_vector/max_diff.h"
 
 std::vector<int> get_rand(int size) {
