@@ -25,8 +25,7 @@ TEST(max_diff_in_vector, get_max_difference_mpi_Size_3) {
     test_vector = get_rand(vect_size);
 
     int res = get_max_difference_mpi(test_vector);
-    if (proc_rank == 0)
-    {
+    if (proc_rank == 0) {
         ASSERT_EQ(get_max_difference_without_mpi(test_vector), res);
     }
 }
@@ -38,8 +37,7 @@ TEST(max_diff_in_vector, get_max_difference_mpi_Size_60) {
     std::vector<int> test_vector(vect_size);
     test_vector = get_rand(vect_size);
     int res = get_max_difference_mpi(test_vector);
-    if (proc_rank == 0)
-    {
+    if (proc_rank == 0) {
         ASSERT_EQ(get_max_difference_without_mpi(test_vector), res);
     }
 }
@@ -51,10 +49,8 @@ TEST(max_diff_in_vector, get_max_difference_mpi_Size_400) {
     std::vector<int> test_vector(vect_size);
 
     int res = get_max_difference_mpi(test_vector);
-    if (proc_rank == 0) {
-
+    if (proc_rank == 0)
         ASSERT_EQ(get_max_difference_without_mpi(test_vector), res);
-    }
 }
 
 TEST(max_diff_in_vector, get_max_difference_mpi_Size_2000) {
@@ -64,9 +60,7 @@ TEST(max_diff_in_vector, get_max_difference_mpi_Size_2000) {
     std::vector<int> test_vector(vect_size);
     int res = get_max_difference_mpi(test_vector);
     if (proc_rank == 0)
-    {
         ASSERT_EQ(get_max_difference_without_mpi(test_vector), res);
-    }
 }
 
 int main(int argc, char** argv) {
