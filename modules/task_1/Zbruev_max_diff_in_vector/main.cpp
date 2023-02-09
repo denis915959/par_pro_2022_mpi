@@ -1,10 +1,10 @@
 // Copyright 2022 Zbruev Denis
 
-#include <gtest-mpi-listener.hpp>
-
-#include <gtest/gtest.h>
-#include <vector>
-#include "./max_diff.h"
+#include<gtest/gtest.h>
+#include<mpi.h>
+#include<vector>
+#include<gtest-mpi-listener.hpp>
+#include"../../../modules/task_1/Zbruev_max_diff_in_vector/max_diff.h"
 
 TEST(max_diff_in_vector, test_get_max_difference_without_mpi) {
     int vect_size = 4;
