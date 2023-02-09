@@ -11,7 +11,7 @@
 
 std::vector<int> get_rand(int size) {
     std::vector<int> vec(size);
-    srand(time(NULL));  // рандомный вектор строим
+    srand(time(NULL));
     for (int i = 0; i < size; i++) {
         vec[i] = rand_r()%500;
     }
@@ -42,7 +42,8 @@ int get_max_difference_mpi(std::vector<int> Vector) {
     if (proc_rank == 0) {
         if (fragment_size) {
             for (int proc = 1; proc < size; proc++) {
-                MPI_Send(&Vector[0] + proc * fragment_size + remainder, fragment_size + 1, MPI_INT, proc, 0, MPI_COMM_WORLD);
+                MPI_Send(&Vector[0] + proc * fragment_size + remainder,
+                fragment_size + 1, MPI_INT, proc, 0, MPI_COMM_WORLD);
             }
         }
     }

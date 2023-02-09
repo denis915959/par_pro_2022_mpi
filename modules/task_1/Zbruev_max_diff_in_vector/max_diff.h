@@ -1,7 +1,6 @@
 // Copyright 2022 Zbruev Denis
-#ifndef MODULES_TASK_1_ZBRUEV_MAX_DIFF_IN_VECTOR_MAX_DIFF_H_ 
-#define MODULES_TASK_1_ZBRUEV_MAX_DIFF_IN_VECTOR_MAX_DIFF_H_ 
-
+#ifndef MODULES_TASK_1_ZBRUEV_MAX_DIFF_IN_VECTOR_MAX_DIFF_H_
+#define MODULES_TASK_1_ZBRUEV_MAX_DIFF_IN_VECTOR_MAX_DIFF_H_
 #include <vector>
 
 std::vector<int> get_rand(int size);
