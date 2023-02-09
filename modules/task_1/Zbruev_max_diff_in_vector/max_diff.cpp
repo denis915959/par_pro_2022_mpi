@@ -10,7 +10,7 @@
 
 std::vector<int> get_rand(int vect_size) {
     std::mt19937 generator;
-    generator.seed(static_cast<unsigned int>(time(nullptr)));
+    generator.seed(time(nullptr));
     std::vector<int> res(vect_size);
     for (int j = 0; j < vect_size; j++)
         res[j] = generator() % 100;
