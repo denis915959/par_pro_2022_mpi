@@ -1,13 +1,12 @@
- //Copyright 2022 Zbruev Denis
+// Copyright 2022 Zbruev Denis
 
 #include <gtest-mpi-listener.hpp>
-#include <main.h>
+
 #include <gtest/gtest.h>
 #include <vector>
 #include "./max_diff.h"
 
 TEST(max_diff_in_vector, test_get_max_difference_without_mpi) {
-
     int vect_size = 4;
     std::vector<int> test_vector(vect_size);
     test_vector[0] = 3;
@@ -25,9 +24,9 @@ TEST(max_diff_in_vector, get_max_difference_mpi_Size_3) {
     std::vector<int> test_vector(vect_size);
     test_vector = get_rand(vect_size);
 
-    int res=get_max_difference_mpi(test_vector);
-    if (proc_rank == 0) {
-        
+    int res = get_max_difference_mpi(test_vector);
+    if (proc_rank == 0)
+    {
         ASSERT_EQ(get_max_difference_without_mpi(test_vector), res);
     }
 }
@@ -39,8 +38,8 @@ TEST(max_diff_in_vector, get_max_difference_mpi_Size_60) {
     std::vector<int> test_vector(vect_size);
     test_vector = get_rand(vect_size);
     int res = get_max_difference_mpi(test_vector);
-    if (proc_rank == 0) {
-
+    if (proc_rank == 0)
+    {
         ASSERT_EQ(get_max_difference_without_mpi(test_vector), res);
     }
 }
@@ -63,10 +62,9 @@ TEST(max_diff_in_vector, get_max_difference_mpi_Size_2000) {
     MPI_Comm_rank(MPI_COMM_WORLD, &proc_rank);
     int vect_size = 2000;
     std::vector<int> test_vector(vect_size);
-
     int res = get_max_difference_mpi(test_vector);
-    if (proc_rank == 0) {
-
+    if (proc_rank == 0)
+    {
         ASSERT_EQ(get_max_difference_without_mpi(test_vector), res);
     }
 }
