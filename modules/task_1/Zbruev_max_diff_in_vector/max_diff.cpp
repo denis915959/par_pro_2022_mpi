@@ -12,7 +12,7 @@ std::vector<int> get_rand(int size) {
     std::vector<int> vec(size);
     srand(time(NULL));
     for (int i = 0; i < size; i++) {
-        vec[i] = rand_r()%500;
+        vec[i] = rand()%500;
     }
     return vec;
 }
