@@ -6,15 +6,14 @@
 #include <vector>
 #include <random>
 #include <exception>
+#include <stdlib.h>
 #include "../../../modules/task_1/Zbruev_max_diff_in_vector/max_diff.h"
-#include <cstddef>
 
 std::vector<int> get_rand(int size) {
     std::vector<int> vec(size);
-    srand(time(NULL)); //рандомный вектор строим
-    for (int i = 0; i < size; i++)
-    {
-        vec[i] = rand()%500;
+    srand(time(NULL));  // рандомный вектор строим
+    for (int i = 0; i < size; i++) {
+        vec[i] = rand_r()%500;
     }
     return vec;
 }
@@ -47,7 +46,6 @@ int get_max_difference_mpi(std::vector<int> Vector) {
             }
         }
     }
-
     int result = 0;
     int max_difference = 0;
 
@@ -56,12 +54,10 @@ int get_max_difference_mpi(std::vector<int> Vector) {
             tmp_vect.resize(fragment_size + remainder + 1);
             tmp_vect.assign(Vector.begin(), Vector.begin() + fragment_size + remainder + 1);
             max_difference = get_max_difference_without_mpi(tmp_vect);
-        }
-        else {
+        } else {
             max_difference = get_max_difference_without_mpi(Vector);
         }
-    }
-    else if (fragment_size) {
+    } else if (fragment_size) {
         tmp_vect.resize(fragment_size + 1);
         MPI_Status status;
         MPI_Recv(&tmp_vect[0], fragment_size + 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);

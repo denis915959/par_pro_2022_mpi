@@ -8,4 +8,4 @@ std::vector<int> get_rand(int size);
 int get_max_difference_without_mpi(std::vector<int> Vector);
 int get_max_difference_mpi(std::vector<int> Vector);
 
-#endif  
+#endif  // MODULES_TASK_1_ZBRUEV_MAX_DIFF_IN_VECTOR_MAX_DIFF_H_"  
