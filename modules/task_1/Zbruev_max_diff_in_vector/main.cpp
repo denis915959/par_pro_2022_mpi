@@ -1,10 +1,10 @@
-//Copyright 2022 Zbruev Denis
+ //Copyright 2022 Zbruev Denis
 
 #include <gtest-mpi-listener.hpp>
+#include <main.h>
 #include <gtest/gtest.h>
 #include <vector>
 #include "./max_diff.h"
-#include <cstddef>
 
 TEST(max_diff_in_vector, test_get_max_difference_without_mpi) {
 
