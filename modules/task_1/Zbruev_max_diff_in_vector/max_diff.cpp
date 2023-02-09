@@ -8,13 +8,13 @@
 #include <exception>
 #include "../../../modules/task_1/Zbruev_max_diff_in_vector/max_diff.h"
 
-std::vector<int> get_rand(int size) {
-    std::vector<int> vec(size);
-    srand(time(NULL));
-    for (int i = 0; i < size; i++) {
-        vec[i] = rand()%500;
-    }
-    return vec;
+std::vector<int> get_rand(int vect_size) {
+    std::mt19937 generator;
+    generator.seed(static_cast<unsigned int>(time(nullptr)));
+    std::vector<int> res(vect_size);
+    for (int j = 0; j < vect_size; j++)
+        res[j] = generator() % 100;
+    return res;
 }
 
 int get_max_difference_without_mpi(std::vector<int> Vector) {
